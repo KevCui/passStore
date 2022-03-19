@@ -64,11 +64,11 @@ set_args() {
                 ;;
             u)
                 cat "${_SELECTED_USERNAME:-}"
-                exit 1
+                exit 0
                 ;;
             p)
                 decrypt "$(cat "${_SELECTED_PASSWORD:-}")"
-                exit 1
+                exit 0
                 ;;
             h)
                 usage
