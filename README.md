@@ -31,7 +31,6 @@ I need a simple command-line password manager which can store the credentials lo
 
 ```
 $ openssl rand 128 > ~/.ssh/passStore.key
-
 ```
 
 ### 2. Export global variable PASSSTORE_KEY
