@@ -90,13 +90,13 @@ check_command_status() {
 
 encrypt() {
     #1: secret string
-    "$_OPENSSL" enc -aes-128-cbc -pbkdf2 -a -A -salt -k "${PASSSTORE_KEY:-}" <<< "$1"
+    "$_OPENSSL" enc -aes-128-cbc -pbkdf2 -a -A -salt -kfile "${PASSSTORE_KEY:-}" <<< "$1"
     check_command_status "$?"
 }
 
 decrypt() {
     #1: encrypted string
-    "$_OPENSSL" enc -aes-128-cbc -pbkdf2 -a -d -salt -k "${PASSSTORE_KEY:-}" <<< "$1"
+    "$_OPENSSL" enc -aes-128-cbc -pbkdf2 -a -d -salt -kfile "${PASSSTORE_KEY:-}" <<< "$1"
     check_command_status "$?"
 }
 
