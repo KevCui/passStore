@@ -5,7 +5,8 @@
 ## Table of Contents
 
 - [Why](#why)
-- [Preparation](#preparation)
+- [Dependency](#dependency)
+- [Setup](#setup)
   - [1. Generate a symmetric key](#1-generate-a-symmetric-key)
   - [2. Export global variable PASSSTORE_KEY](#2-export-global-variable-passstore_key)
 - [Usage](#usage)
@@ -19,7 +20,12 @@
 
 I need a simple command-line password manager which can store the credentials locally. However, the majority of password managers are cloud based. Some of them do store credentials locally, like KeePass, but they are overkill for my needs...
 
-## Preparation
+## Dependency
+
+- [fzf](https://github.com/junegunn/fzf)
+- [openssl](https://linux.die.net/man/1/openssl)
+
+## Setup
 
 ### 1. Generate a symmetric key
 
