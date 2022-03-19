@@ -23,11 +23,6 @@ print_info() {
     [[ -z "${_LIST_LINK_ONLY:-}" ]] && printf "%b\n" "\033[32m[INFO]\033[0m $1" >&2
 }
 
-print_warn() {
-    # $1: warning message
-    [[ -z "${_LIST_LINK_ONLY:-}" ]] && printf "%b\n" "\033[33m[WARNING]\033[0m $1" >&2
-}
-
 print_error() {
     # $1: error message
     printf "%b\n" "\033[31m[ERROR]\033[0m $1" >&2
