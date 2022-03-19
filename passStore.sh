@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# A local password store
+# A command-line password store on your local machine
 #
 #/ Usage:
 #/   ./passStore.sh [-a] [-u] [-p] [-h|--help]
