@@ -96,10 +96,12 @@ decrypt() {
 }
 
 select_password() {
-    local s
-    s="$("$_FZF" < "$_CREDENTIAL_LIST")"
-    awk -F '❚' '{print $2}' <<< "$s" > "$_SELECTED_USERNAME"
-    ep="$(awk -F '❚' '{print $3}' <<< "$s" | tee "$_SELECTED_PASSWORD")"
+    local d s item
+    d="$(awk -F '❚' '{print $1"❚"$2}' "$_CREDENTIAL_LIST")"
+    s="$("$_FZF" <<< "$d")"
+    item="$(grep -m 1 "$s" "$_CREDENTIAL_LIST")"
+    awk -F '❚' '{print $2}' <<< "$item" > "$_SELECTED_USERNAME"
+    ep="$(awk -F '❚' '{print $3}' <<< "$item" | tee "$_SELECTED_PASSWORD")"
     decrypt "$ep"
 }
 
